@@ -1,9 +1,0 @@
-.cell {
-    top: 0;
-    left: 0;
-    width: 0;
-    height: 0;
-    position: absolute;
-    border: 1px solid #000;
-    font-size: 0;
-}

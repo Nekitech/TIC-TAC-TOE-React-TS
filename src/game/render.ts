@@ -1,4 +1,4 @@
-import {cellParams} from "./interfaces";
+import {cellActiveProps, cellParams} from "./interfaces";
 
 export const render = (amountCells: number, gap: number, widthCell: number): cellParams[] => {
     const cellsParams = [];
@@ -8,7 +8,8 @@ export const render = (amountCells: number, gap: number, widthCell: number): cel
                 top: i * gap + i * widthCell,
                 left: j * gap + j * widthCell,
                 width: widthCell,
-                height: widthCell
+                height: widthCell,
+                cell: widthCell
             })
         }
     }
@@ -36,22 +37,50 @@ export const renderUpdate = (frameLeft: number,
 
     if (
         coordsCenterAxios.y <= widthCell * switchAxis.y ||
-        coordsCenterAxios.x <= widthCell * switchAxis.x
+        coordsCenterAxios.x <= widthCell * switchAxis.x ||
+        coordsCenterAxios.y >= widthCell * switchAxis.y ||
+        coordsCenterAxios.x >= widthCell * switchAxis.x
     ) {
-        arrayCells?.forEach((cell ) => {
+        arrayCells.forEach((cell ) => {
             const cellHTML = cell as HTMLElement
             cellHTML.style.transform = `translate(
               ${widthCell * -switchAxis.x}px, 
               ${widthCell * -switchAxis.y}px)`;
         });
-
-    } else {
-        arrayCells?.forEach((cell) => {
-            const cellHTML = cell as HTMLElement
-            cellHTML.style.transform = `translate(
-              ${widthCell * -switchAxis.x}px, 
-              ${widthCell * -switchAxis.y}px)`;
-        });
-
     }
+};
+
+export const renderActiveCells = (arrayCoordsCells: cellActiveProps[], arrayCells: Element[], center: HTMLElement, widthCell: number) => {
+    for (let i = 0; i < arrayCoordsCells.length; i++) {
+        for (let j = 0; j < arrayCells.length; j++) {
+            const currCell = {
+                x: -Math.floor(
+                    (center.getBoundingClientRect().left -
+                        arrayCells[j].getBoundingClientRect().left) /
+                    widthCell
+                ),
+                y: -Math.floor(
+                    (center.getBoundingClientRect().top -
+                        arrayCells[j].getBoundingClientRect().top) /
+                    widthCell
+                )
+            };
+            if (
+                currCell.x === arrayCoordsCells[i].x &&
+                currCell.y === arrayCoordsCells[i].y
+            ) {
+                arrayCells[j].classList.add("cellActive");
+                arrayCoordsCells[i].cell = arrayCells[j];
+                arrayCells[j].innerHTML = arrayCoordsCells[i].symbol;
+                break;
+            }
+        }
+    }
+};
+
+export const clearActiveCells = (arrayCells: Element[]) => {
+    arrayCells.forEach((el) => {
+        el.classList.remove("cellActive");
+        el.innerHTML = "";
+    });
 };

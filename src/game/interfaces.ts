@@ -8,3 +8,16 @@ export interface cellParams {
     transform?: string;
     refCenter?: MutableRefObject<any>;
 }
+
+export interface cellActiveProps {
+    x: number;
+    y: number;
+    cell: Element;
+    symbol: string;
+}
+
+export interface players {
+    [key: string]: string
+}
+
+export type getWinnerT = (winner: string) => void

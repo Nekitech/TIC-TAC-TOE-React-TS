@@ -2,8 +2,9 @@ import React, {useEffect, useState} from 'react'
 import styles from './Frame.module.css'
 import Field from "../field/Field";
 import {fieldSize} from "../../game/constants";
+import {getWinnerT} from "../../game/interfaces";
 
-function Frame() {
+function Frame(props: { getWinner: getWinnerT }) {
     const frame = React.useRef<HTMLDivElement | null>(null);
     const [frameOffset, setFrameOffset] = useState({
         frameLeft: 0,
@@ -25,7 +26,7 @@ function Frame() {
 
     return (
         <div ref={frame} className={styles.frame}>
-            <Field frameLeft={frameOffset.frameLeft} frameTop={frameOffset.frameTop}/>
+            <Field getWinner={props.getWinner} frameLeft={frameOffset.frameLeft} frameTop={frameOffset.frameTop}/>
         </div>
     );
 }

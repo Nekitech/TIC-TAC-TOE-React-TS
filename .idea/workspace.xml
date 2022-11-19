@@ -4,34 +4,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4e9a82a4-c552-4203-8c27-740b0b3201cb" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/cell/Cell.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/cell/Cell.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/coordsAxis/CoordsAxis.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/coordsAxis/CoordsAxis.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/field/Field.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/field/Field.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/frame/Frame.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/frame/Frame.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/game/constants.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/game/gameModel.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/game/globalVariables.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/game/interfaces.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/game/render.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tsconfig.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+    <list default="true" id="4e9a82a4-c552-4203-8c27-740b0b3201cb" name="Changes" comment="first commit">
+      <change afterPath="$PROJECT_DIR$/src/UI/btnReload/BtnReload.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/UI/winnerLabel/WinnerLabel.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/cell/Cell.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/cell/Cell.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/cell/Cell.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/cell/Cell.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/field/Field.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/field/Field.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/frame/Frame.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/frame/Frame.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/gameModel.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/gameModel.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/globalVariables.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/globalVariables.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/interfaces.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/interfaces.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/render.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/render.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/logo.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/reportWebVitals.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/setupTests.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,9 +29,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="TypeScript JSX File" />
         <option value="TypeScript File" />
         <option value="CSS File" />
+        <option value="TypeScript JSX File" />
       </list>
     </option>
   </component>
@@ -83,8 +71,16 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1668845030864</updated>
-      <workItem from="1668845037224" duration="26380000" />
+      <workItem from="1668845037224" duration="36486000" />
     </task>
+    <task id="LOCAL-00001" summary="first commit">
+      <created>1668875239805</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1668875239805</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -100,5 +96,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="first commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="first commit" />
   </component>
 </project>
