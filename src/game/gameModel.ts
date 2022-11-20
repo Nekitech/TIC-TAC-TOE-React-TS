@@ -58,8 +58,7 @@ export const checkCondition = (
 
 export const getActiveCell = (cellX:number, cellY:number, arrayActiveCells: cellActiveProps[]) => {
     return (
-        arrayActiveCells?.find((cell) => cell?.x === cellX && cell?.y === cellY)
-            ?.cell ?? false
+        arrayActiveCells?.find((cell) => cell?.x === cellX && cell?.y === cellY)?.cell ?? false
     );
 };
 
@@ -71,10 +70,11 @@ export const changeCurrPlayer = (currPlayer: string, players: players) => {
 
 export const reloadGame = (arrayActiveCells: cellActiveProps[], players: players, currPlayer: string): void => {
     arrayActiveCells.forEach((cell) => {
-        cell.cell.classList.remove("cellActive");
-        cell.cell.innerHTML = "";
-        cell.symbol = "";
+        const cellHTML = cell.cell as HTMLElement;
+        cellHTML.classList.remove("cellActive");
+        cellHTML.innerHTML = "";
     });
+
 
 
 }

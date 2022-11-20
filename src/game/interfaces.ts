@@ -1,4 +1,3 @@
-import {MutableRefObject} from "react";
 
 export interface cellParams {
     top: number;
@@ -6,13 +5,12 @@ export interface cellParams {
     width: number;
     height: number;
     transform?: string;
-    refCenter?: MutableRefObject<any>;
 }
 
 export interface cellActiveProps {
     x: number;
     y: number;
-    cell: Element;
+    cell: Element | null;
     symbol: string;
 }
 

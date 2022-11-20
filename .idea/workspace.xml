@@ -4,21 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4e9a82a4-c552-4203-8c27-740b0b3201cb" name="Changes" comment="first commit">
-      <change afterPath="$PROJECT_DIR$/src/UI/btnReload/BtnReload.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/UI/winnerLabel/WinnerLabel.tsx" afterDir="false" />
+    <list default="true" id="4e9a82a4-c552-4203-8c27-740b0b3201cb" name="Changes" comment="1.1 v (add reload, winnerlabel, some logic)">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/cell/Cell.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/cell/Cell.module.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/cell/Cell.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/cell/Cell.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/coordsAxis/CoordsAxis.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/coordsAxis/CoordsAxis.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/field/Field.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/field/Field.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/frame/Frame.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/frame/Frame.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/game/gameModel.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/gameModel.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/game/globalVariables.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/globalVariables.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/game/interfaces.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/interfaces.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/render.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/render.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -47,22 +40,22 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "list.type.of.created.stylesheet": "CSS",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "ts.external.directory.path": "C:\\Users\\USER\\Desktop\\Projects\\tic-tac-toe-react\\node_modules\\typescript\\lib",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;C:\\Users\\USER\\Desktop\\Projects\\tic-tac-toe-react\\node_modules\\typescript\\lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -71,7 +64,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1668845030864</updated>
-      <workItem from="1668845037224" duration="36486000" />
+      <workItem from="1668845037224" duration="38512000" />
+      <workItem from="1668935932145" duration="8628000" />
     </task>
     <task id="LOCAL-00001" summary="first commit">
       <created>1668875239805</created>
@@ -80,7 +74,14 @@
       <option name="project" value="LOCAL" />
       <updated>1668875239805</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="1.1 v (add reload, winnerlabel, some logic)">
+      <created>1668886910454</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1668886910454</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -99,6 +100,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="first commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="first commit" />
+    <MESSAGE value="1.1 v (add reload, winnerlabel, some logic)" />
+    <option name="LAST_COMMIT_MESSAGE" value="1.1 v (add reload, winnerlabel, some logic)" />
   </component>
 </project>
