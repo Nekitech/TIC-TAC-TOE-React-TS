@@ -9,7 +9,6 @@ export const render = (amountCells: number, gap: number, widthCell: number): cel
                 left: j * gap + j * widthCell,
                 width: widthCell,
                 height: widthCell,
-                cell: widthCell
             })
         }
     }

@@ -69,7 +69,7 @@ export const changeCurrPlayer = (currPlayer: string, players: players) => {
     return arrayPlayers[nextIndex >= arrayPlayers.length ? 0 : nextIndex];
 };
 
-export const reloadGame = (arrayActiveCells: cellActiveProps[], players: players, currPlayer: string): void => {
+export const reloadGame = (arrayActiveCells: cellActiveProps[]): void => {
     arrayActiveCells.forEach((cell) => {
         cell.cell.classList.remove("cellActive");
         cell.cell.innerHTML = "";

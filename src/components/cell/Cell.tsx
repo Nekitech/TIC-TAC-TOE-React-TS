@@ -6,4 +6,4 @@ const Cell = (props: HTMLProps<any> ) => {
     );
 }
 
-export default Cell;
+export default React.memo(Cell);

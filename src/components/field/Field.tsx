@@ -4,7 +4,7 @@ import {clearActiveCells, render, renderActiveCells, renderUpdate} from '../../g
 import {amountCells, condWin, fieldSize, gap} from "../../game/constants";
 import Cell from "../cell/Cell";
 import CoordsAxis from "../coordsAxis/CoordsAxis";
-import {cellActiveProps, getWinnerT} from "../../game/interfaces";
+import {cellActiveProps, cellParams, getWinnerT} from "../../game/interfaces";
 import {players} from "../../game/globalVariables";
 import {changeCurrPlayer, checkCondition, getActiveCell, reloadGame} from "../../game/gameModel";
 import BtnReload from "../../UI/btnReload/BtnReload";
@@ -116,20 +116,21 @@ function Field({frameLeft, frameTop, getWinner}: { frameLeft: number, frameTop: 
                 ) {
                     fieldHTML.style.pointerEvents = "none";
                     getWinner(currPlayer);
+                    currPlayer = players['x'];
                 }
                 currPlayer = changeCurrPlayer(currPlayer, players);
 
             }
         });
 
-
     }
+
 
     return (
         <>
             <div ref={field} className={styles.field}>
                 <CoordsAxis refCenter={center}>
-                    {(widthCell > 0) &&
+                    {
                         render(amountCells, gap, widthCell).map((cell, index) => {
                             return (
                                 <Cell key={index} style={{
@@ -145,14 +146,14 @@ function Field({frameLeft, frameTop, getWinner}: { frameLeft: number, frameTop: 
                 </CoordsAxis>
             </div>
             <BtnReload onClick={() => {
-                reloadGame(arrayActiveCells, players, currPlayer )
-                setArrayActiveCells([]);
+                reloadGame(arrayActiveCells)
+                arrayActiveCells.length = 0
                 getWinner("");
-                currPlayer = players['x'];
                 if(field.current) field.current.style.pointerEvents = "auto";
+
             }}/>
         </>
     );
 }
 
-export default Field;
+export default React.memo(Field);
