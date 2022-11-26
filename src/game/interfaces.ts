@@ -8,10 +8,9 @@ export interface cellParams {
 }
 
 export interface cellActiveProps {
-    x: number;
-    y: number;
-    cell: Element | null;
-    symbol: string;
+    [x: number]: {
+        [y: number]: string;
+    };
 }
 
 export interface players {

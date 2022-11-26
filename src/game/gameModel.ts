@@ -3,17 +3,17 @@ import {cellActiveProps, players} from "./interfaces";
 export const checkCondition = (
     cellX:number,
     cellY:number,
-    arrayActiveCells: cellActiveProps[],
+    arrayActiveCells: cellActiveProps,
     condWin: number,
     players: players,
     currPlayer: string
 ) => {
     const condCheck = { h: 0, v: 0, dtop: 0, dbot: 0 };
     const condCheckMax = { h: 0, v: 0, dtop: 0, dbot: 0 };
+    console.log(arrayActiveCells)
     for (let i = -condWin + 1; i < condWin; i++) {
         if (
-            arrayActiveCells.find((cell) => cell.x === cellX - i && cell.y === cellY)
-                ?.symbol === currPlayer
+           arrayActiveCells[cellX - i]?.[cellY] === currPlayer
         ) {
             condCheck.h++;
             if (condCheck.h >= condWin) return true;
@@ -21,8 +21,7 @@ export const checkCondition = (
         } else condCheck.h = 0;
 
         if (
-            arrayActiveCells.find((cell) => cell.x === cellX && cell.y === cellY - i)
-                ?.symbol === currPlayer
+            arrayActiveCells[cellX]?.[cellY - i] === currPlayer
         ) {
             condCheck.v++;
             if (condCheck.v >= condWin) return true;
@@ -30,9 +29,7 @@ export const checkCondition = (
         } else condCheck.v = 0;
 
         if (
-            arrayActiveCells.find(
-                (cell) => cell.x === cellX - i && cell.y === cellY - i
-            )?.symbol === currPlayer
+            arrayActiveCells[cellX - i]?.[cellY - i] === currPlayer
         ) {
             condCheck.dtop++;
             if (condCheck.dtop >= condWin) return true;
@@ -40,15 +37,13 @@ export const checkCondition = (
         } else condCheck.dtop = 0;
 
         if (
-            arrayActiveCells.find(
-                (cell) => cell.x === cellX - i && cell.y === cellY - i * -1
-            )?.symbol === currPlayer
+            arrayActiveCells[cellX - i]?.[cellY - i * -1] === currPlayer
         ) {
             condCheck.dbot++;
             if (condCheck.dbot >= condWin) return true;
             if (condCheck.dbot > condCheckMax.dbot) condCheckMax.dbot++;
         } else condCheck.dbot = 0;
-
+        console.log(condCheckMax);
         if (Math.max(...Object.values(condCheckMax)) === condWin) {
             return true;
         }
@@ -56,11 +51,6 @@ export const checkCondition = (
     return false;
 };
 
-export const getActiveCell = (cellX:number, cellY:number, arrayActiveCells: cellActiveProps[]) => {
-    return (
-        arrayActiveCells?.find((cell) => cell?.x === cellX && cell?.y === cellY)?.cell ?? false
-    );
-};
 
 export const changeCurrPlayer = (currPlayer: string, players: players) => {
     const arrayPlayers = Object.values(players).reverse();
@@ -68,13 +58,16 @@ export const changeCurrPlayer = (currPlayer: string, players: players) => {
     return arrayPlayers[nextIndex >= arrayPlayers.length ? 0 : nextIndex];
 };
 
-export const reloadGame = (arrayActiveCells: cellActiveProps[], players: players, currPlayer: string): void => {
-    arrayActiveCells.forEach((cell) => {
-        const cellHTML = cell.cell as HTMLElement;
-        cellHTML.classList.remove("cellActive");
-        cellHTML.innerHTML = "";
-    });
-
-
-
+export const getSymbol = (x: number, y: number, arrayCoordsCells: cellActiveProps):string => {
+    return arrayCoordsCells?.[x]?.[y] ?? ''
 }
+
+export const setSymbol = (x: number, y: number, arrayCoordsCells: cellActiveProps, currPlayer: string) => {
+    if(!arrayCoordsCells[x]) {
+        arrayCoordsCells[x] = {}
+    }
+    if(arrayCoordsCells[x][y]) return arrayCoordsCells
+    arrayCoordsCells[x][y] = currPlayer
+    return arrayCoordsCells
+}
+
