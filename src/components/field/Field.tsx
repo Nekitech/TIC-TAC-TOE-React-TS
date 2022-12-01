@@ -17,13 +17,15 @@ function Field({frameLeft, frameTop, getWinner}: { frameLeft: number, frameTop: 
     const [currPlayer, setCurrPlayer] = React.useState(players['x']);
 
     const [isDown, setIsDown] = React.useState(false);
+    const [isWin, setIsWin] = React.useState(false);
 
     const fieldHTML = field.current as HTMLElement;
     const centerHTML = center.current as HTMLElement;
 
+
     useEffect(() => {
         if (fieldHTML) {
-            fieldHTML.oncontextmenu = () => false;
+            document.oncontextmenu = () => false;
             fieldHTML.style.width = `${fieldSize + 4 * widthCell}px`;
             fieldHTML.style.height = `${fieldSize + 4 * widthCell}px`;
             fieldHTML.style.transform = `translate(${-widthCell * 2}px, ${-widthCell * 2}px)`;
@@ -40,8 +42,7 @@ function Field({frameLeft, frameTop, getWinner}: { frameLeft: number, frameTop: 
 
     const coordsCenterAxios: coordsCenterAxios = {x: 0, y: 0};
 
-    console.log('renderField');
-    const renderField = React.useMemo(() => {
+    const renderField = () => {
         const cells: ReactElement[] = [];
         if (leftTopCell) {
             coordsCenterAxios.x = -(frameLeft - leftTopCell.getBoundingClientRect().x)
@@ -67,12 +68,12 @@ function Field({frameLeft, frameTop, getWinner}: { frameLeft: number, frameTop: 
                                 height: widthCell,
                                 fontSize: widthCell,
                                 transform: `translate(${widthCell * -switchAxis.x}px, ${widthCell * -switchAxis.y}px)`
-                            }} className={'cell'}/>)
+                            }} />)
                 }
             }
         }
         return cells
-    }, [arrayActiveCells, switchAxis.y, switchAxis.x, coordsCenterAxios.y, coordsCenterAxios.x]);
+    };
 
     return (
         <>
@@ -98,11 +99,12 @@ function Field({frameLeft, frameTop, getWinner}: { frameLeft: number, frameTop: 
                          y: Math.floor(coordsField.y / widthCell),
                          x: Math.floor(coordsField.x / widthCell)
                      });
-                     centerHTML.style.transform = `translate(${coordsField.x}px, ${coordsField.y}px)`;
 
+                     centerHTML.style.transform = `translate(${coordsField.x}px, ${coordsField.y}px)`;
                  }}
                  onClick={(e) => {
                      e.preventDefault();
+                     if(isWin) return
                      if (e.buttons !== 0) return;
                      const target = e.target as HTMLElement;
                      const activeCellX = -Math.floor(
@@ -118,7 +120,7 @@ function Field({frameLeft, frameTop, getWinner}: { frameLeft: number, frameTop: 
                      if (checkCondition(activeCellX, activeCellY, arrayActiveCells, condWin, players, currPlayer)) {
                          getWinner(currPlayer);
                          setCurrPlayer(players['x']);
-                         fieldHTML.style.pointerEvents = "none";
+                         setIsWin(true);
                      } else {
                          setCurrPlayer(changeCurrPlayer(currPlayer, players));
                      }
@@ -126,14 +128,13 @@ function Field({frameLeft, frameTop, getWinner}: { frameLeft: number, frameTop: 
 
                  ref={field} className={styles.field}>
                 <CoordsAxis refCenter={center}>
-                    {renderField}
+                    {renderField()}
                 </CoordsAxis>
             </div>
             <BtnReload onClick={() => {
-                // clearActiveCells(arrayCells);
                 setArrayActiveCells({})
-                fieldHTML.style.pointerEvents = "auto";
                 getWinner('');
+                setIsWin(false);
             }}/>
         </>
     )

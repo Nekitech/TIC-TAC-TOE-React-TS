@@ -18,7 +18,7 @@ const Cell = (props: any) => {
             props.style.width
         )
     }
-
+    console.log('render Cell');
     const symbol = getSymbol(currCellCoords.x, currCellCoords.y, props.arrayActiveCells)
 return (
     <div ref={cellRef} style={props.style} className={(symbol) ? 'cell cellActive' : 'cell'}>
@@ -27,4 +27,4 @@ return (
 );
 }
 
-export default Cell;
+export default React.memo(Cell);

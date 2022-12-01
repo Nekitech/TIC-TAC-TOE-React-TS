@@ -6,12 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="4e9a82a4-c552-4203-8c27-740b0b3201cb" name="Changes" comment="fix">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/cell/Cell.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/cell/Cell.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/coordsAxis/CoordsAxis.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/coordsAxis/CoordsAxis.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/field/Field.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/field/Field.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/game/constants.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/constants.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/gameModel.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/gameModel.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,7 +66,8 @@
       <workItem from="1669485122095" duration="4991000" />
       <workItem from="1669539533633" duration="1355000" />
       <workItem from="1669772487859" duration="9000" />
-      <workItem from="1669854241402" duration="6153000" />
+      <workItem from="1669854241402" duration="7170000" />
+      <workItem from="1669862367355" duration="2631000" />
     </task>
     <task id="LOCAL-00001" summary="first commit">
       <created>1668875239805</created>
@@ -92,7 +90,14 @@
       <option name="project" value="LOCAL" />
       <updated>1669478473040</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="fix">
+      <created>1669860978966</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1669860978966</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
