@@ -1,6 +1,7 @@
 import React from 'react';
 import {getSymbol} from "../../game/gameModel";
 
+
 const Cell = (props: any) => {
     const cellRef = React.useRef<HTMLDivElement>(null);
     let currCellCoords = {x: 0, y: 0};
@@ -19,7 +20,6 @@ const Cell = (props: any) => {
     }
 
     const symbol = getSymbol(currCellCoords.x, currCellCoords.y, props.arrayActiveCells)
-
 return (
     <div ref={cellRef} style={props.style} className={(symbol) ? 'cell cellActive' : 'cell'}>
         {symbol}

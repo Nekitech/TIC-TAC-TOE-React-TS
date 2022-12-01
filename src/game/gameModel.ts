@@ -10,8 +10,7 @@ export const checkCondition = (
 ) => {
     const condCheck = { h: 0, v: 0, dtop: 0, dbot: 0 };
     const condCheckMax = { h: 0, v: 0, dtop: 0, dbot: 0 };
-    console.log(arrayActiveCells)
-    for (let i = -condWin + 1; i < condWin; i++) {
+        for (let i = -condWin + 1; i < condWin; i++) {
         if (
            arrayActiveCells[cellX - i]?.[cellY] === currPlayer
         ) {
@@ -43,7 +42,6 @@ export const checkCondition = (
             if (condCheck.dbot >= condWin) return true;
             if (condCheck.dbot > condCheckMax.dbot) condCheckMax.dbot++;
         } else condCheck.dbot = 0;
-        console.log(condCheckMax);
         if (Math.max(...Object.values(condCheckMax)) === condWin) {
             return true;
         }

@@ -77,10 +77,3 @@ import {cellActiveProps, cellParams} from "./interfaces";
 //
 // };
 
-export const clearActiveCells = (arrayCells: Element[]) => {
-    arrayCells.forEach((el) => {
-        el.classList.remove("cellActive");
-        el.innerHTML = "";
-    });
-};
-

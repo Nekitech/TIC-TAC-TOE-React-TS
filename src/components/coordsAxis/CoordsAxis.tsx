@@ -22,4 +22,4 @@ const CoordsAxis: React.FC<Props> = (props) => {
     );
 };
 
-export default React.memo(CoordsAxis);
+export default React.memo(CoordsAxis)   ;
